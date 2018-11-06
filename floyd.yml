@@ -1,0 +1,99 @@
+env: tensorflow-1.7
+
+task:
+  train_whs:
+    machine: cpu
+    description: KerasCategorical with wearhouse cource
+    input:
+      - source: hara2dev/datasets/rocinante_whs/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage.py train --tub /my_data --model /output/kc_whs
+
+  train_avc:
+    machine: cpu
+    description: KerasCategorical with AVC cource
+    input:
+      - source: hara2dev/datasets/rocinante_avc/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage.py train --tub /my_data --model /output/kc_avc
+
+  train_lstm:
+    machine: cpu
+    description: KerasCategorical with lstm data
+    input:
+      - source: hara2dev/datasets/lstm/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage.py train --tub /my_data --model /output/kc_lstm
+
+  train_gen:
+    machine: cpu
+    description: KerasCategorical with gen cource
+    input:
+      - source: hara2dev/datasets/rocinante_gen/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage.py train --tub /my_data --model /output/kc_gen
+
+  train_whs_convlstm2d:
+    machine: cpu
+    description: convlstm2d with wearhouse cource
+    input:
+      - source: hara2dev/datasets/rocinante_whs/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_convlstm2d.py train --tub /my_data --model /output/convlstm2d_whs
+
+  train_avc_convlstm2d:
+    machine: cpu
+    description: convlstm2d with AVC cource
+    input:
+      - source: hara2dev/datasets/rocinante_avc/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_convlstm2d.py train --tub /my_data --model /output/convlstm2d_avc
+
+  train_lstm_convlstm2d:
+    machine: cpu
+    description: convlstm2d with lstm data
+    input:
+      - source: hara2dev/datasets/lstm/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_convlstm2d.py train --tub /my_data --model /output/convlstm2d_lstm
+
+  train_gen_convlstm2d:
+    machine: cpu
+    description: convlstm2d with gen cource
+    input:
+      - source: hara2dev/datasets/rocinante_gen/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_convlstm2d.py train --tub /my_data --model /output/convlstm2d_gen
+
+  train_whs_v3:
+    machine: cpu
+    description: Inception V3 fine-tune with wearhouse cource
+    input:
+      - source: hara2dev/datasets/rocinante_whs/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_inceptionv3.py train --tub /my_data --model /output/v3_whs
+
+  train_avc_v3:
+    machine: cpu
+    description: Inception V3 fine-tune with AVC cource
+    input:
+      - source: hara2dev/datasets/rocinante_avc/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_inceptionv3.py train --tub /my_data --model /output/v3_avc
+
+  train_lstm_v3:
+    machine: cpu
+    description: Inception V3 fine-tune with lstm data
+    input:
+      - source: hara2dev/datasets/lstm/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_inceptionv3.py train --tub /my_data --model /output/v3_lstm
+
+  train_gen_v3:
+    machine: cpu
+    description: Inception V3 fine-tune with gen cource
+    input:
+      - source: hara2dev/datasets/rocinante_gen/1
+        destination: /my_data
+    command: pip install docopt && pip install donkeycar && python manage_inceptionv3.py train --tub /my_data --model /output/v3_gen
+

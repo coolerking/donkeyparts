@@ -1,0 +1,9 @@
+.git
+.gitignore
+/data
+/docs
+/models
+/logs
+*.md
+*.yml
+__pycashe__
